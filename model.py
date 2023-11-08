@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 from functools import partial
 
-__all__ = ['resnet50', 'resnet101', 'resnet152', 'resnet200']
+#__all__ = ['resnet50', 'resnet101', 'resnet152', 'resnet200']
 
 
 def conv3x3x3(in_planes, out_planes, stride=1):
@@ -239,22 +239,4 @@ def resnet50(**kwargs):
     return model
 
 
-def resnet101(**kwargs):
-    """Constructs a ResNet-101 model.
-    """
-    model = SlowFast(Bottleneck, [3, 4, 23, 3], **kwargs)
-    return model
 
-
-def resnet152(**kwargs):
-    """Constructs a ResNet-101 model.
-    """
-    model = SlowFast(Bottleneck, [3, 8, 36, 3], **kwargs)
-    return model
-
-
-def resnet200(**kwargs):
-    """Constructs a ResNet-101 model.
-    """
-    model = SlowFast(Bottleneck, [3, 24, 36, 3], **kwargs)
-    return model
